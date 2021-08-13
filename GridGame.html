@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridGame</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="css/GridGame.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/GridGame.js">
+    </script>
+</head>
+
+<body>
+    <div id="intro">
+        <h1 class="animate__animated animate__flipInY animate__bounce animate__backInDown">Grid Game</h1>
+        <p class="animate__animated animate__lightSpeedInLeft">
+            Welcome to the Grid game where you need to find the one hidden jackpot.
+        </p>
+        <p class="animate__animated animate__lightSpeedInRight ">
+            Be careful as there are bombs hidden in the grid, which will end the game<br /> as soon as you touch them.
+        </p>
+        <p class="animate__animated animate__lightSpeedInLeft">
+            There are three levels, and the number of bombs increase with each levels.
+        </p>
+        <p class="animate__animated animate__fadeInUpBig">
+            You must avoid all the bombs and find the jackpot to win the game! Good luck!
+        </p>
+        <button type="open-Form" class="open-Form animate__animated animate__slideInDown" onclick="openForm()"><span>Next</span></button>
+    </div>
+    <audio id="coin" src="assests/audio/coin.mp3"></audio>
+    <audio id="error" src="assests/audio/incorrect-answer.mp3"></audio>
+    <audio id="looser" src="assests/audio/looser.wav"></audio>
+    <audio id="winner" src="assests/audio/winner.mp3"></audio>
+    <h1 id="win" style="color: cadetblue;"></h1>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content animate__animated animate__zoomIn" id="win">
+            <span class="close">&times;</span>
+            <p class="win"></p>
+        </div>
+    </div>
+    <center>
+        <h1>Welcome <span id="user"></span></h1>
+        <h1>Score: <span id="score">0</span></h1>
+    </center>
+    <div id="form" class="modal animate__animated animate__flipInX">
+        <div class="modal-content content">
+            <div class="form">
+                <span class="close">&times;</span>
+                <label><b>Name :</b></label>
+                <input type="text" placeholder="Enter Name" id="name" name="name" required />
+                <br />
+                <button type="submit" class="btn" onclick="other()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div id="level" class="modal ">
+        <div class="modal-content level animate__animated animate__flipInY">
+            <span class="close">&times;</span>
+            <div id="levelBtn">
+                <button type="submit" class="btn game" onclick="easyGame()">Easy</button>
+                <button type="submit" class="btn game" onclick="mediumGame()">Medium</button>
+                <button type="submit" class="btn game" onclick="hardGame()">Hard</button>
+            </div>
+        </div>
+    </div>
+    <table id="myTable">
+    </table>
+    <button type="submit" class="btn leaderBoard" onclick="leaderBoard()">LeaderBoard</button>
+    <div id="leadTable" class="modal">
+        <div class="modal-content animate__animated animate__backInUp" style="padding: 0.1em;">
+            <span class="close">&times;</span>
+            <h1>Top 3 Winners</h1>
+            <div class="leadTr">
+                <h3><span>UserName</span><span>Score</span></h3>
+            </div>
+            <div class="lead">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
